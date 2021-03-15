@@ -5,13 +5,13 @@ fozzieBear();
 
 console.log("===================");
 
-function beaker(){
-    console.log(`Meep`);
-    console.log(`Meep`);
-    console.log(`Meep`);
-    console.log(`Meep`);
+function beaker(speak){
+    console.log(speak);
+    console.log(speak);
+    console.log(speak);
+    console.log(speak);
 }
-beaker();
+beaker(`Meep`);
 
 console.log("===================");
 
@@ -33,34 +33,42 @@ console.log("===================");
 
 function muppetShowSeasons(seasons){
     if (seasons === 5){
-        return (true);
+        return true;
     }
-    return (false);
+    return false;
 }
+
 console.log(muppetShowSeasons(5));
-console.log(muppetShowSeasons(4));
 
 console.log("===================");
 
-const muppets = [`Kermit the frog`, `Miss Piggy`, `Fozzie Bear`, `The Great Gonzo`]
+const muppets = [
+    `Kermit the frog`, 
+    `Miss Piggy`, 
+    `Fozzie Bear`, 
+    `The Great Gonzo`
+];
 
 function showMuppets(names){
-    console.log(muppets[0]);
-    console.log(muppets[1]);
-    console.log(muppets[2]);
-    console.log(muppets[3]);
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
 }
-console.log(showMuppets(muppets));
+showMuppets(muppets);
 
 console.log("===================");
 
-const manOrMuppet = function(muppets){
+const manOrMuppet = function(){
     console.log(`Am I a man or am I a Muppet?`);
 }
+manOrMuppet();
 
-rainbowConnection = () => `Someday we'll find it. The Rainbow Connection. The lovers, the dreamers and me`;
-const test = rainbowConnection();
-console.log(test);
+console.log("===================");
+
+rainbowConnection = () => (`Someday we'll find it. The Rainbow Connection. The lovers, the dreamers and me`);
+
+console.log(rainbowConnection());
 
 console.log("===================");
 
@@ -70,11 +78,12 @@ console.log("===================");
 const newMuppetMovies = [
     `The Muppets`,
     `Muppets Most Wanted`
-]
+];
 
-upperMovies = newMuppetMovies.map(function upper() {
-    ``.toUpperCase;
-})
+function toUpperMovie(movie){
+    return movie.toUpperCase();
+}
+const upperMovies = newMuppetMovies.map(toUpperMovie);
 console.log(upperMovies);
 
 console.log("===================");
@@ -82,3 +91,25 @@ console.log("===================");
 const oldMuppetMovies = [
     "The Muppet Movie", "The Muppets Take Manhattan", "The Great Muppet Caper", "The Muppet Christmas Carol", "Muppet Treasure Island", "Muppets From Space"
 ]
+
+const twoMovies = oldMuppetMovies.filter(title => title === "The Great Muppet Caper" || title === "Muppet Treasure Island");
+console.log(twoMovies);
+
+console.log("===================");
+
+const charactersOne = ["Statler", "Waldorf"];
+
+const charactersTwo = ["Swedish Chef", "Animal", "Rowlf"];
+
+function randomMuppet(characters){
+    console.log(characters[Math.floor (Math.random() * characters.length)]);
+}
+
+randomMuppet(charactersOne);
+randomMuppet(charactersTwo);
+
+console.log("===================");
+
+
+
+
